@@ -1,4 +1,5 @@
 <script setup>
+import MButton from './MButton.vue';
 import { adicionarAoCarrinho } from '@_data/carrinho.js'
 const props = defineProps({
     livro: object
