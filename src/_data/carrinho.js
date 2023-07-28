@@ -29,4 +29,4 @@ function adicionarAoCarrinho(livro) {
         carrinho.value.total += livro.price
     }
 }
-export { }
+export {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem }

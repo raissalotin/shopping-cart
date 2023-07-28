@@ -1,6 +1,7 @@
 <script setup>
 import { carrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
-
+import MButton from './MButton.vue'
+import CarrinhoVazio from './carrinhoVazio.vue'
 function formatarPreco(preco) {
     return 'R$' + preco.toFixed(2).replace('.', '.')
 }
