@@ -2,14 +2,17 @@
 import MButton from './MButton.vue';
 
 const props = defineProps({
-    livro: object
+    livro: Object
 })
+
+const emit = defineEmits(['adicionarAo  Carrinho'])
+
 function formatarPreco(preco) {
     return 'R$' + preco.toFixed(2).replace('.', '.')
 }
 </script>
 <template>
-    <div class="card-livro" v-for="livro in livros" :key="livro.id">
+    <div class="card-livro">
         <div class="card-info-livro">
             <div class="wrap-livro">
                 <img :src="props.livro.img" alt="Capa do livro" class="capa-livro" />
@@ -17,10 +20,13 @@ function formatarPreco(preco) {
             <p class="titulo-livro">{{ props.livro.title }}</p>
             <p class="autor-livro">{{ props.livro.author }}</p>
             <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
-            <button @click="adicionarAoCarrinho(livro)">Adicionar ao carrinho</button>
         </div>
         <div class="card-buttons-livros">
-            <button @click="adicionarAoCarrinho(props.livro)">adicionar ao carrinho</button>
+            <m-button
+            @click="emit('adicionarAoCarrinho', props.livro)"
+            text="  Adeicionar ao carrinho"
+            ></m-button>
+            <m-button text="compartilhar"/>
         </div>
     </div>
 </template>
