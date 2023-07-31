@@ -36,7 +36,6 @@ function limparCarrinho(){
     carrinho.value.total = 0
 }
 
-function concluido(){carrinho.value.itens = [],
-    carrinho.value.total = 0}
+
 
 export {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho }
