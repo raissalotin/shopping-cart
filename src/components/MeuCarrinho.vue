@@ -1,7 +1,11 @@
 <script setup>
-import { carrinho, removerItemCarrinho, atualizaQuantidadeItem } from '@/_data/carrinho.js'
+import { carrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho } from '@/_data/carrinho.js'
 import MButton from './MButton.vue'
-import CarrinhoVazio from './carrinhoVazio.vue'
+import carrinhoVazio from './carrinhoVazio.vue'
+import mdiAccount from 'vue-material-design-icons/Account.vue'
+
+
+
 
 function formatarPreco(preco) {
     return 'R$' + preco.toFixed(2).replace('.', '.')
@@ -9,10 +13,12 @@ function formatarPreco(preco) {
 
 </script>
 <template>
-    <div class="carrinho">
-        <h2>Meu carrinho</h2>
+    
+    <div class="carrinho"> 
+        <h2>Meu carrinho </h2>
+       
         <div class="wrap-carrinho">
-            <p v-if="carrinho.itens.length === 0">Seu carrinho está vazio</p>
+            <carrinho-vazio v-if="carrinho.itens.length === 0" />
 
             <div v-else>
                 <div class="item-carrinho" v-for="(item, index) in carrinho.itens" :key="index">
@@ -27,7 +33,9 @@ function formatarPreco(preco) {
                                 <p class="info-livro-preco">{{ formatarPreco(item.price) }}/un</p>
                             </div>
                             <div>
-                                <p>qtde: <input type="number" v-model="item.quantidade"
+                                <p>qtde: <input
+                                 type="number" 
+                                 v-model="item.quantidade"
                                         @change="atualizaQuantidadeItem(item)" min="1" />
                                 </p>
                                 <button @click="removerItemCarrinho(item)">&#128465;</button>
@@ -36,15 +44,48 @@ function formatarPreco(preco) {
                         </div>
                     </div>
                 </div>
+                <m-button @click="limparCarrinho()" text="Limpar carrinho" />
+             <m-button text="Finalizar compra" />
+             <p>Total: {{ formatarPreco(carrinho.total) }}</p>
             </div>
-            <p>Total: {{ formatarPreco(carrinho.total) }}</p>
         </div>
     </div>
+    
 </template>
 
 
 <style scoped>
-.info-livro {
+.modal{
+   color: blue;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top:0;
+    width: 100%;
+    height:100%;
+    overflow: auto;
+    background-color: 0,0,0,0.4;
+}
+
+.modal .content{
+    background-color: aliceblue;
+    margin: 15% auto;
+    padding: 20%;
+    border-radius: 5px;
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrap-carrinho .carrinho-total {
+    position: fixed;
+    bottom: 3%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.item-carrinho .info-livro {
     display: flex;
     margin-bottom: 10px;
 }

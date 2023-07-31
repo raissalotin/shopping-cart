@@ -1,8 +1,10 @@
 import { ref } from 'vue'
+
 const carrinho = ref({
     itens: [],
     total: 0
 })
+
 function atualizaQuantidadeItem(item) {
     carrinho.value.total -= item.total
     item.total = item.price * item.quantidade
@@ -29,4 +31,9 @@ function adicionarAoCarrinho(livro) {
         carrinho.value.total += livro.price
     }
 }
-export {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem }
+function limparCarrinho(){
+    carrinho.value.itens = [],
+    carrinho.value.total = 0
+}
+
+export {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho }

@@ -1,6 +1,6 @@
 <template>
     <p>
-       seu carrinho esá vazio 
+       seu carrinho está vazio 
     </p>
 </template>
 

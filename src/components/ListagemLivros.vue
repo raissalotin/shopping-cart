@@ -2,13 +2,13 @@
 import { livros } from '@/_data/livros.js'
 import { adicionarAoCarrinho } from '@/_data/carrinho.js'
 
-import cardlivro from './components/cardlivro.vue'
+import CardLivro from '@/components/CardLivro.vue'
 
 </script>
 
 <template>
     <div class="listagem-livros">
-      <cardlivro 
+      <card-livro 
       v-for="livro in livros" 
       v-bind:key="livro.id" 
       v-bind:livro="livro"
