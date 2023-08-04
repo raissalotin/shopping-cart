@@ -49,13 +49,14 @@ function formatarPreco(preco) {
         </div>
         <m-button @click="limparCarrinho()" text="Limpar carrinho" />
 
-       
-    <button type="button" class="btn btn-primary p-3 mt-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <m-button text="Finalizar compra"  @click="$router.push({name: 'pedidoFeito'})" />
+
+   <!-- Modal <button type="button" class="btn btn-primary p-3 mt-2 " data-bs-toggle="modal" data-bs-target="#exampleModal">
       Finalizar compra
     </button>
-    <hr>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <hr> -->
+    
+   <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -74,12 +75,13 @@ function formatarPreco(preco) {
           <div class="modal-footer">
             <button @click="limparCarrinho" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             <button @click="limparCarrinho" type="button" class="btn btn-warning" data-bs-dismiss="modal">concluido</button>
+            
           </div>
         </div>
       </div>
     </div>
-        
-        <!-- 1 -->
+        <-- d -->
+     
         </div>
     </div>
 </div>
