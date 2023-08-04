@@ -6,7 +6,7 @@ import {
   limparCarrinho
 } from '@/_data/carrinho.js'
 import MButton from './MButton.vue'
-import carrinhoVazio from './carrinhoVazio.vue'
+import MMessage from './MMessage.vue'
 
 
 function formatarPreco(preco) {
@@ -18,7 +18,7 @@ function formatarPreco(preco) {
     <h2>Meu carrinho</h2>
 
     <div class="wrap-carrinho">
-      <carrinho-vazio v-if="carrinho.itens.length === 0" />
+      <m-message v-if="carrinho.itens.length === 0"/>
 
       <div v-else>
         <div class="item-carrinho" v-for="(item, index) in carrinho.itens" :key="index">

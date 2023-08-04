@@ -1,6 +1,6 @@
 <script setup>
 import MButton from '@/components/MButton.vue'
-
+import MMessage from '@/components/MMessage.vue'
 
 function formatarPreco(preco) {
     return 'R$ ' + preco.toFixed(2).replace('.', ',')
@@ -44,7 +44,7 @@ const mensagemErro = computed(() => {
     <div class="carrinho">
         <h1 class="title">SEU CARRINHO &#128722;</h1>
         <div class="wrap-carrinho">
-            <m-message v-if="carrinho.itens.length === 0" />
+            <m-message v-if="carrinho.itens.length === n"/>
             <div v-else>
                 <div class="item-carrinho" v-for="(item, index) in carrinho.itens" :key="index">
                     <div class="info-livro">
