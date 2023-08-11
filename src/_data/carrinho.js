@@ -38,4 +38,5 @@ function limparCarrinho(){
 
 
 
+
 export {carrinho, adicionarAoCarrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho }
