@@ -162,6 +162,7 @@ const mensagemErro = computed(() => {
     width: 50%;
     background-color: rgb(105, 114, 119);
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
 }
 
 .botao {
